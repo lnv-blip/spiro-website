@@ -108,6 +108,9 @@ const translations = {
     'footer.explore': 'Explore',
     'footer.getInTouch': 'Get in touch',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+
+    'meta.title': 'Spiro — Breathing room for your team',
+    'meta.description': 'On-site yoga, breathwork, and pilates for Barcelona companies. Breathing room for your team.',
   },
 
   es: {
@@ -216,6 +219,9 @@ const translations = {
     'footer.explore': 'Explorar',
     'footer.getInTouch': 'Contactar',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+
+    'meta.title': 'Spiro — El equipo que cuidas es el equipo que se queda.',
+    'meta.description': 'Yoga y pilates presenciales para empresas de Barcelona. Espacio para respirar.',
   },
 
   ca: {
@@ -324,14 +330,82 @@ const translations = {
     'footer.explore': 'Explorar',
     'footer.getInTouch': 'Contactar',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+
+    'meta.title': 'Spiro — L\'equip que cuides és l\'equip que es queda.',
+    'meta.description': 'Ioga i pilates presencials per a empreses de Barcelona. Espai per respirar.',
   },
 };
+
+const SUPPORTED_LANGS = ['en', 'es', 'ca'];
+const LANG_PATHS = { en: '/', es: '/es', ca: '/ca' };
+const PATH_LANGS = { '/es': 'es', '/ca': 'ca', '/en': 'en' };
+const CANONICAL_BASE = 'https://bespiro.com';
+
+function normalizeLang(lang) {
+  return SUPPORTED_LANGS.includes(lang) ? lang : null;
+}
+
+function getLangFromPath() {
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  return PATH_LANGS[path] || null;
+}
+
+function getLangFromQuery() {
+  return normalizeLang(new URLSearchParams(window.location.search).get('lang'));
+}
+
+function getBrowserLang() {
+  const prefs = navigator.languages || [navigator.language];
+  for (const pref of prefs) {
+    const code = pref.toLowerCase().split('-')[0];
+    if (code === 'ca') return 'ca';
+    if (code === 'es') return 'es';
+  }
+  return null;
+}
+
+function resolveLanguage() {
+  return (
+    getLangFromPath() ||
+    getLangFromQuery() ||
+    normalizeLang(localStorage.getItem('spiro-lang')) ||
+    getBrowserLang() ||
+    'en'
+  );
+}
+
+function langToPath(lang) {
+  return LANG_PATHS[lang] || '/';
+}
+
+function langToCanonical(lang) {
+  const path = langToPath(lang);
+  return path === '/' ? `${CANONICAL_BASE}/` : `${CANONICAL_BASE}${path}`;
+}
+
+function syncUrl(lang) {
+  const path = langToPath(lang);
+  const hash = window.location.hash;
+  const current = window.location.pathname.replace(/\/$/, '') || '/';
+  const target = path.replace(/\/$/, '') || '/';
+
+  if (current !== target || window.location.search) {
+    history.replaceState(null, '', path + hash);
+  }
+}
 
 function setLanguage(lang) {
   const t = translations[lang];
   if (!t) return;
 
   document.documentElement.lang = lang;
+  document.title = t['meta.title'];
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.content = t['meta.description'];
+
+  const canonical = document.getElementById('canonical');
+  if (canonical) canonical.href = langToCanonical(lang);
 
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -360,11 +434,11 @@ function setLanguage(lang) {
   });
 
   localStorage.setItem('spiro-lang', lang);
+  syncUrl(lang);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('spiro-lang') || 'en';
-  setLanguage(saved);
+  setLanguage(resolveLanguage());
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
