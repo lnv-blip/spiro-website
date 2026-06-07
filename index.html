@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiro — Breathing room for your team</title>
+  <meta name="description" content="On-site yoga, breathwork, and pilates for Barcelona companies. Breathing room for your team.">
+  <link rel="canonical" href="https://bespiro.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%232B38D4'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-row">
+      <a class="brand" href="#top" aria-label="Spiro home">
+        <svg class="mk" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="ring" cx="50" cy="50" r="44" opacity=".35"/>
+          <circle class="ring" cx="50" cy="50" r="29" opacity=".7"/>
+          <circle class="dot" cx="50" cy="50" r="12"/>
+        </svg>
+        <span class="wordmark">sp<span class="idot">ı<span class="tit"></span></span>ro</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <div class="nav-links">
+          <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+          <a href="#offering" data-i18n="nav.whatWeDo">What we do</a>
+          <a href="#how" data-i18n="nav.howItWorks">How it works</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#contact" data-i18n="nav.connect">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <div class="lang-switcher" role="group" aria-label="Language">
+            <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+            <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+            <button class="lang-btn" data-lang="ca" aria-pressed="false">CAT</button>
+          </div>
+          <a class="btn btn-primary" href="#contact" data-i18n="nav.cta">Let's talk</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="wrap hero-inner">
+      <span class="hero-eyebrow mono"><span class="dotmk"></span><span data-i18n="hero.eyebrow">Yoga · pilates · breathwork</span></span>
+      <h1 data-i18n-html="hero.title"><span class="hero-line">Breathing room</span><span class="hero-line">for your <em>team.</em></span></h1>
+      <p class="lead hero-lead" data-i18n-html="hero.subtitle"><span class="hero-subline">On-site and online yoga and pilates, run around your workday.</span><span class="hero-subline">The benefit your people actually use, and a reason they stay.</span></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-arrow" href="#contact">
+          <span data-i18n="hero.ctaPrimary">Let's talk</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#offering" data-i18n="hero.ctaSecondary">See how it works</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Benefits -->
+  <section class="benefits" id="benefits">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="benefits.eyebrow">Why HR teams choose Spiro</span></span>
+        <h2 data-i18n="benefits.title">Wellbeing that shows up for your people and your numbers.</h2>
+        <p class="lead" data-i18n="benefits.desc">A benefit people look forward to, with none of the admin and none of the yoga-studio intimidation.</p>
+      </div>
+      <div class="ben-grid">
+        <article class="ben">
+          <div class="n">01</div>
+          <h3 data-i18n="benefits.engagement.title">Retention you can feel</h3>
+          <p data-i18n="benefits.engagement.desc">People who feel genuinely cared for stay longer. Spiro turns wellbeing from a line item into a reason to build a career with you.</p>
+          <div class="tail" data-i18n="benefits.engagement.tail">Lower churn · stronger culture</div>
+        </article>
+        <article class="ben">
+          <div class="n">02</div>
+          <h3 data-i18n="benefits.satisfaction.title">A perk that gets used</h3>
+          <p data-i18n="benefits.satisfaction.desc">In-person or remotely, on the calendar, in a room people already walk past. Attendance that beats the gym stipend nobody redeems.</p>
+          <div class="tail" data-i18n="benefits.satisfaction.tail">Real engagement, not a voucher</div>
+        </article>
+        <article class="ben">
+          <div class="n">03</div>
+          <h3 data-i18n="benefits.hr.title">Zero admin for you</h3>
+          <p data-i18n="benefits.hr.desc">We bring the instructors, the mats, the scheduling and the reminders. You pick a room and a time and we run the rest.</p>
+          <div class="tail" data-i18n="benefits.hr.tail">We do everything for you</div>
+        </article>
+        <article class="ben">
+          <div class="n">04</div>
+          <h3 data-i18n="benefits.productivity.title">Inclusive by design</h3>
+          <p data-i18n="benefits.productivity.desc">All levels, all bodies, all languages, no experience needed. Gentle enough for beginners, real enough for the regulars.</p>
+          <div class="tail" data-i18n="benefits.productivity.tail">Everyone on the team</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do + How it works -->
+  <section class="offering" id="offering">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="whatWeDo.eyebrow">What we do</span></span>
+        <h2 data-i18n="whatWeDo.title">Sessions, designed around your workday.</h2>
+        <p class="lead" data-i18n="whatWeDo.desc">Four formats that flex to your space, your headcount and the week your team is having.</p>
+      </div>
+      <div class="off-grid">
+        <article class="off">
+          <svg class="mk ic" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="40" opacity=".4" stroke="currentColor"/><circle class="dot" cx="50" cy="50" r="11"/></svg>
+          <h3 data-i18n="whatWeDo.yoga.title">On-site & remote yoga</h3>
+          <p data-i18n="whatWeDo.yoga.desc">Energising flows to start the day or restorative sessions to close it. Adapts to any meeting room, no studio required.</p>
+          <div class="fmt" data-i18n="whatWeDo.yoga.fmt">30–60 min · weekly or biweekly</div>
+        </article>
+        <article class="off">
+          <svg class="mk ic" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="5" stroke-dasharray="178 70" transform="rotate(-50 50 50)"/><circle class="dot" cx="50" cy="50" r="11"/></svg>
+          <h3 data-i18n="whatWeDo.pilates.title">On-site & remote pilates</h3>
+          <p data-i18n="whatWeDo.pilates.desc">Mat-based strength, core and posture work — built for bodies that sit at a desk all day. Low impact, high return.</p>
+          <div class="fmt" data-i18n="whatWeDo.pilates.fmt">30–60 min</div>
+        </article>
+        <article class="off">
+          <svg class="mk ic" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring" cx="50" cy="50" r="42" opacity=".3" stroke="currentColor"/><circle class="ring" cx="50" cy="50" r="26" opacity=".6" stroke="currentColor"/><circle class="dot" cx="50" cy="50" r="9"/></svg>
+          <h3 data-i18n="whatWeDo.breathwork.title">Breath & reset</h3>
+          <p data-i18n="whatWeDo.breathwork.desc">Short guided breathwork and mindfulness for high-pressure weeks. A few minutes that change the rest of the day.</p>
+          <div class="fmt" data-i18n="whatWeDo.breathwork.fmt">15–30 min · on demand</div>
+        </article>
+        <article class="off">
+          <svg class="mk ic" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="18" width="64" height="64" rx="14" fill="none" stroke="currentColor" stroke-width="5" opacity=".5"/><circle class="dot" cx="50" cy="50" r="11"/></svg>
+          <h3 data-i18n="whatWeDo.workshops.title">Workshops & events</h3>
+          <p data-i18n="whatWeDo.workshops.desc">Wellbeing weeks, offsites and launch days. A centrepiece moment that makes the benefit visible across the company.</p>
+          <div class="fmt" data-i18n="whatWeDo.workshops.fmt">Custom · one-off or series</div>
+        </article>
+      </div>
+
+      <div class="how" id="how">
+        <div class="hl" data-i18n="howItWorks.eyebrow">How it works</div>
+        <div class="steps">
+          <article class="step">
+            <div class="sn">1</div>
+            <h4 data-i18n="howItWorks.step1.title">Tell us your space</h4>
+            <p data-i18n="howItWorks.step1.desc">Team size, remote or in person, rooms, the rhythm of your week. A 30-minute call is all it takes.</p>
+          </article>
+          <article class="step">
+            <div class="sn">2</div>
+            <h4 data-i18n="howItWorks.step2.title">We design a programme</h4>
+            <p data-i18n="howItWorks.step2.desc">The right mix of formats and instructors, matched to your people and goals.</p>
+          </article>
+          <article class="step">
+            <div class="sn">3</div>
+            <h4 data-i18n="howItWorks.step3.title">We show up & run it</h4>
+            <p data-i18n="howItWorks.step3.desc">Instructors, kit and reminders handled. Your team just rolls out a mat.</p>
+          </article>
+          <article class="step">
+            <div class="sn">4</div>
+            <h4 data-i18n="howItWorks.step4.title">You see the impact</h4>
+            <p data-i18n="howItWorks.step4.desc">Simple attendance and sentiment reporting you can take to leadership.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-visual">
+        <img
+          src="assets/profile.jpg"
+          alt="Laura — Founder of Spiro"
+          class="about-image"
+          data-i18n-alt="about.imageAlt"
+          onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&h=900&fit=crop&crop=face'"
+        >
+        <div class="hero-badge">
+          <svg class="mk breathe" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="ring r1" cx="50" cy="50" r="44" opacity=".4"/>
+            <circle class="ring r2" cx="50" cy="50" r="29" opacity=".75"/>
+            <circle class="dot" cx="50" cy="50" r="12"/>
+          </svg>
+          <div class="txt">
+            <span data-i18n="about.badgeTitle">Laura, Spiro owner</span>
+            <span data-i18n="about.badgeSub">Yoga teacher since 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="about.eyebrow">About us</span></span>
+        <h2 data-i18n="about.title">Spiro is Latin for "I breathe."</h2>
+        <p data-i18n-html="about.p1">We started Spiro in Barcelona around a simple belief: <span class="hl">wellbeing isn't a perk, it's a basic for all companies.</span> A team that can pause, reconnect and breathe does better work, and stays.</p>
+        <p data-i18n="about.p2">So we made it effortless to bring real movement into the workday. No memberships, no clichés, no incense. Just considered, in-person sessions your people actually want to be in, run by certified instructors we'd trust with our own teams. Available in English, Spanish or Catalan.</p>
+        <div class="about-meta">
+          <div class="m"><div class="k" data-i18n="about.meta1.k">Barcelona</div><div class="v" data-i18n="about.meta1.v">Based and raised</div></div>
+          <div class="m"><div class="k" data-i18n="about.meta2.k">Remote & in-person</div><div class="v" data-i18n="about.meta2.v">We adapt to your team</div></div>
+          <div class="m"><div class="k" data-i18n="about.meta3.k">EN · ES · CAT</div><div class="v" data-i18n="about.meta3.v">Multilingual by nature</div></div>
+          <div class="m"><div class="k" data-i18n="about.meta4.k">All levels</div><div class="v" data-i18n="about.meta4.v">& bodies welcome</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info-block">
+        <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="connect.eyebrow">Contact</span></span>
+        <h2 data-i18n="connect.title">Let's give your team room to breathe.</h2>
+        <p class="lead" data-i18n="connect.desc">Tell us a little about your company and we'll come back to you soon.</p>
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="k" data-i18n="connect.emailLabel">Email</div>
+            <div class="v"><a href="mailto:hello@bespiro.com">hello@bespiro.com</a></div>
+          </div>
+          <div class="ci-item">
+            <div class="k" data-i18n="connect.langLabel">Languages</div>
+            <div class="v" data-i18n="connect.langs">English · Spanish · Catalan</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="card" id="contactForm" action="https://formspree.io/f/mrevpang" method="POST" novalidate>
+        <div class="field row2">
+          <div class="field">
+            <label for="name" data-i18n="form.name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" data-i18n-placeholder="form.namePlaceholder">
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="form.email">Work email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" data-i18n-placeholder="form.emailPlaceholder">
+          </div>
+        </div>
+        <div class="field row2">
+          <div class="field">
+            <label for="teamSize" data-i18n="form.teamSize">Team size</label>
+            <select id="teamSize" name="teamSize" required>
+              <option value="" data-i18n="form.teamSizePlaceholder">Select…</option>
+              <option value="1-10" data-i18n="form.size1">1–10 people</option>
+              <option value="11-50" data-i18n="form.size2">11–50 people</option>
+              <option value="51-200" data-i18n="form.size3">51–200 people</option>
+              <option value="200+" data-i18n="form.size4">200+ people</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="city" data-i18n="form.city">City</label>
+            <input id="city" name="city" type="text" required autocomplete="address-level2" data-i18n-placeholder="form.cityPlaceholder">
+          </div>
+        </div>
+        <p class="form-error hidden" id="formError" role="alert" data-i18n="form.error">Something went wrong. Please try again or email hello@bespiro.com.</p>
+        <div class="form-foot">
+          <button class="btn btn-primary btn-submit btn-arrow" type="submit">
+            <span data-i18n="form.submit">Send enquiry</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="form-done hidden" id="formDone" aria-live="polite">
+        <svg class="mk breathe" width="60" height="60" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="ring r1" cx="50" cy="50" r="44" opacity=".4"/>
+          <circle class="ring r2" cx="50" cy="50" r="29" opacity=".75"/>
+          <circle class="dot" cx="50" cy="50" r="12"/>
+        </svg>
+        <h3 data-i18n="form.doneTitle">Thank you!</h3>
+        <p data-i18n="form.success">Your enquiry is on its way. Seat back and relax, we'll be in touch soon :)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="brand" href="#top">
+            <svg class="mk" width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring" cx="50" cy="50" r="44" opacity=".4" stroke="var(--bone)"/>
+              <circle class="ring" cx="50" cy="50" r="29" opacity=".75" stroke="var(--bone)"/>
+              <circle class="dot" cx="50" cy="50" r="12"/>
+            </svg>
+            <span class="wordmark">sp<span class="idot">ı<span class="tit"></span></span>ro</span>
+          </a>
+          <p data-i18n="footer.desc">On-site yoga & pilates for the companies of Barcelona. Breathing room for your team.</p>
+        </div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <div class="h" data-i18n="footer.explore">Explore</div>
+            <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+            <a href="#offering" data-i18n="nav.whatWeDo">What we do</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#contact" data-i18n="nav.connect">Contact</a>
+          </div>
+          <div class="foot-col">
+            <div class="h" data-i18n="footer.getInTouch">Get in touch</div>
+            <a href="mailto:hello@bespiro.com">hello@bespiro.com</a>
+            <a href="#contact" data-i18n="nav.cta">Let's talk</a>
+            <a href="#top">Barcelona</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span class="mono">&copy; 2026 Spiro · Barcelona</span>
+        <span class="mono" data-i18n="footer.tagline">Respira. Reconecta. Repite.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
