@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const btn = e.target.closest('a.btn, button.btn, a[data-i18n="nav.cta"]');
+    const btn = e.target.closest('a.btn, button.btn, button.exit-popup-submit, a[data-i18n="nav.cta"]');
     if (!btn || btn.classList.contains('lang-btn')) return;
 
     trackEvent('cta_click', {
