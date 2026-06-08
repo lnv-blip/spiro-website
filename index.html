@@ -303,6 +303,10 @@
           <label for="message" data-i18n="form.message">Message</label>
           <textarea id="message" name="message" rows="4" data-i18n-placeholder="form.messagePlaceholder"></textarea>
         </div>
+        <label class="field-check">
+          <input id="newsletterOptIn" name="newsletter" type="checkbox" value="yes">
+          <span data-i18n="form.newsletter">Subscribe to our newsletter</span>
+        </label>
         <p class="form-error hidden" id="formError" role="alert" data-i18n="form.error">Something went wrong. Please try again or email hello@bespiro.com.</p>
         <div class="form-foot">
           <button class="btn btn-primary btn-submit btn-arrow" type="submit">
@@ -320,6 +324,31 @@
         </svg>
         <h3 data-i18n="form.doneTitle">Thank you!</h3>
         <p data-i18n="form.success">Your enquiry is on its way. Seat back and relax, we'll be in touch soon :)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="newsletter">
+    <div class="wrap">
+      <div class="newsletter-band">
+        <div class="newsletter-copy">
+          <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="newsletter.eyebrow">Newsletter</span></span>
+          <h2 data-i18n="newsletter.title">Wellness insights for HR teams</h2>
+          <p data-i18n="newsletter.desc">Occasional notes on events, corporate wellbeing and what actually works. No spam, just valuable content directly to your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mvznaayk" method="POST" novalidate>
+          <div class="newsletter-row" id="newsletterFields">
+            <label class="sr-only" for="newsletterEmail" data-i18n="newsletter.emailLabel">Email</label>
+            <input id="newsletterEmail" name="email" type="email" required autocomplete="email" data-i18n-placeholder="newsletter.emailPlaceholder">
+            <button class="btn btn-light btn-arrow" type="submit">
+              <span data-i18n="newsletter.submit">Join the newsletter</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="newsletter-error hidden" id="newsletterError" role="alert" data-i18n="newsletter.error">Something went wrong. Please try again or email hello@bespiro.com.</p>
+          <p class="newsletter-done hidden" id="newsletterDone" aria-live="polite" data-i18n="newsletter.success">You're in. Watch your inbox for our next note.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -351,6 +380,7 @@
             <div class="h" data-i18n="footer.getInTouch">Get in touch</div>
             <a href="mailto:hello@bespiro.com">hello@bespiro.com</a>
             <a href="#contact" data-i18n="nav.cta">Let's talk</a>
+            <a href="#newsletter" data-i18n="footer.newsletter">Newsletter</a>
             <a href="#top">Barcelona</a>
           </div>
         </div>
@@ -361,6 +391,32 @@
       </div>
     </div>
   </footer>
+
+  <!-- Exit-intent newsletter popup -->
+  <div class="exit-popup" id="exitPopup" hidden aria-hidden="true">
+    <div class="exit-popup-backdrop" id="exitPopupBackdrop"></div>
+    <div class="exit-popup-panel" role="dialog" aria-modal="true" aria-labelledby="exitPopupTitle">
+      <button class="exit-popup-close" id="exitPopupClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="newsletter.eyebrow">Newsletter</span></span>
+      <h2 id="exitPopupTitle" data-i18n="newsletter.popup.title">Before you go — stay in the loop</h2>
+      <p data-i18n="newsletter.desc">Occasional notes on events, corporate wellbeing and what actually works. No spam, just valuable content directly to your inbox.</p>
+      <form class="exit-popup-form" id="exitPopupForm" novalidate>
+        <label class="sr-only" for="exitPopupEmail" data-i18n="newsletter.emailLabel">Email</label>
+        <div class="exit-popup-row" id="exitPopupFields">
+          <input id="exitPopupEmail" name="email" type="email" required autocomplete="email" data-i18n-placeholder="newsletter.emailPlaceholder">
+          <button class="btn btn-primary btn-arrow" type="submit">
+            <span data-i18n="newsletter.submit">Join the newsletter</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <p class="exit-popup-error hidden" id="exitPopupError" role="alert" data-i18n="newsletter.error">Something went wrong. Please try again or email hello@bespiro.com.</p>
+        <p class="exit-popup-done hidden" id="exitPopupDone" aria-live="polite" data-i18n="newsletter.success">You're in. Watch your inbox for our next note.</p>
+      </form>
+      <button class="exit-popup-dismiss" id="exitPopupDismiss" type="button" data-i18n="newsletter.popup.dismiss">No thanks</button>
+    </div>
+  </div>
 
   <script src="/js/i18n.js"></script>
   <script src="/js/motion.js"></script>
