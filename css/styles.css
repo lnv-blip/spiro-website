@@ -430,6 +430,57 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
+/* ── Data ── */
+.data {
+  background: var(--surface);
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.data-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data-num {
+  font-family: var(--display);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--signal);
+}
+
+.data-stat p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-70);
+}
+
+.data-source {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-40);
+  font-style: normal;
+  margin-top: 2px;
+}
+
+@media (max-width: 960px) {
+  .data-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+}
+
 /* ── Offering (white, not dark) ── */
 .offering {
   background: var(--surface);
@@ -935,6 +986,10 @@ footer {
     padding-bottom: 72px;
   }
 
+  .data-grid {
+    margin-top: 36px;
+  }
+
   .ben-grid,
   .off-grid {
     grid-template-columns: 1fr;
@@ -1032,6 +1087,10 @@ footer {
 }
 
 @media (max-width: 520px) {
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+
   body {
     font-size: 16px;
   }

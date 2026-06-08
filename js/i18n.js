@@ -35,6 +35,22 @@ const translations = {
     'benefits.productivity.desc': 'All levels, all bodies, all languages, no experience needed. Gentle enough for beginners, real enough for the regulars.',
     'benefits.productivity.tail': 'Everyone on the team',
 
+    'data.eyebrow': 'The data',
+    'data.title': 'Wellbeing isn\'t a cost. It\'s a return.',
+    'data.desc': 'What HR teams and researchers are finding — in numbers.',
+    'data.stat1.num': '95%',
+    'data.stat1.desc': 'Of companies measuring wellness ROI see positive returns.',
+    'data.stat1.source': 'Wellhub, 2024',
+    'data.stat2.num': '9%',
+    'data.stat2.desc': 'Voluntary attrition with strong wellness programs — vs. 15% without.',
+    'data.stat2.source': 'Infeedo',
+    'data.stat3.num': '$3.27',
+    'data.stat3.desc': 'Healthcare savings returned per dollar invested — plus $2.73 in reduced absenteeism.',
+    'data.stat3.source': 'Harvard / health economics research',
+    'data.stat4.num': '28%',
+    'data.stat4.desc': 'Reduction in stress through corporate mindfulness programs — and 20% better sleep.',
+    'data.stat4.source': 'Aetna internal study',
+
     'whatWeDo.eyebrow': 'What we do',
     'whatWeDo.title': 'Sessions, designed around your workday.',
     'whatWeDo.desc': 'Four formats that flex to your space, your headcount and the week your team is having.',
@@ -123,7 +139,7 @@ const translations = {
 
     'hero.eyebrow': 'Yoga · pilates · Breathwork',
     'hero.title': '<span class="hero-line">El equipo que cuidas es</span><span class="hero-line"><em>el equipo que se queda.</em></span>',
-    'hero.subtitle': '<span class="hero-subline">Yoga y pilates presenciales y online, adaptados a vuestra jornada.</span><span class="hero-subline">El beneficio que tu gente realmente usa, y una razón para quedarse.</span>',
+    'hero.subtitle': '<span class="hero-subline">Yoga y pilates presenciales y online, adaptados a vuestra jornada.</span><span class="hero-subline">El beneficio corporativo que tu gente realmente usa, y una razón para quedarse.</span>',
     'hero.ctaPrimary': 'Hablemos',
     'hero.ctaSecondary': 'Así funciona',
     'hero.trust1': 'Remoto y online',
@@ -148,6 +164,22 @@ const translations = {
     'benefits.productivity.title': 'Inclusivo por diseño',
     'benefits.productivity.desc': 'Apto para todos los niveles, cuerpos, idiomas y niveles de experiencia. ¡Todo el mundo es bienvenido!',
     'benefits.productivity.tail': 'Para todo el mundo',
+
+    'data.eyebrow': 'Los datos',
+    'data.title': 'El bienestar no es un gasto. Es un retorno.',
+    'data.desc': 'Lo que están encontrando los equipos de RRHH y la investigación — en cifras.',
+    'data.stat1.num': '95%',
+    'data.stat1.desc': 'De las empresas que miden el ROI del bienestar ven retornos positivos.',
+    'data.stat1.source': 'Wellhub, 2024',
+    'data.stat2.num': '9%',
+    'data.stat2.desc': 'Rotación voluntaria con programas de bienestar sólidos — frente al 15% sin ellos.',
+    'data.stat2.source': 'Infeedo',
+    'data.stat3.num': '3,27 $',
+    'data.stat3.desc': 'De ahorro sanitario por cada dólar invertido — más 2,73 $ en menos absentismo.',
+    'data.stat3.source': 'Investigación Harvard / economía de la salud',
+    'data.stat4.num': '28%',
+    'data.stat4.desc': 'Menos estrés en programas de mindfulness corporativo — y un 20% mejor sueño.',
+    'data.stat4.source': 'Estudio interno de Aetna',
 
     'whatWeDo.eyebrow': 'Qué hacemos',
     'whatWeDo.title': 'Sesiones diseñadas para vuestra jornada.',
@@ -220,8 +252,8 @@ const translations = {
     'footer.getInTouch': 'Contactar',
     'footer.tagline': 'Respira. Reconecta. Repite.',
 
-    'meta.title': 'Spiro — El equipo que cuidas es el equipo que se queda.',
-    'meta.description': 'Yoga y pilates presenciales para empresas de Barcelona. Espacio para respirar.',
+    'meta.title': 'piro | Yoga y pilates para empresas, en persona y online',
+    'meta.description': 'Yoga, pilates y técnicas de respiración para empresas. Beneficios corporativos reales para tu equipo.',
   },
 
   ca: {
@@ -234,7 +266,7 @@ const translations = {
 
     'hero.eyebrow': 'Ioga · pilates · Breathwork',
     'hero.title': '<span class="hero-line">L\'equip que cuides és</span><span class="hero-line"><em>l\'equip que es queda.</em></span>',
-    'hero.subtitle': '<span class="hero-subline">Ioga i pilates presencials i online, adaptats a la teva jornada.</span><span class="hero-subline">El benefici que la teva gent realment utilitza, i una raó per quedar-s\'hi.</span>',
+    'hero.subtitle': '<span class="hero-subline">Ioga i pilates presencials i online, adaptats a la teva jornada.</span><span class="hero-subline">El benefici corporatiu que la teva gent realment utilitza, i una raó per quedar-s\'hi.</span>',
     'hero.ctaPrimary': 'Parlem',
     'hero.ctaSecondary': 'Així funciona',
     'hero.trust1': 'Remot i online',
@@ -259,6 +291,22 @@ const translations = {
     'benefits.productivity.title': 'Inclusiu per disseny',
     'benefits.productivity.desc': 'Apte per a tots els nivells, cossos, idiomes i nivells d\'experiència. Tothom és benvingut!',
     'benefits.productivity.tail': 'Per a tothom',
+
+    'data.eyebrow': 'Les dades',
+    'data.title': 'El benestar no és una despesa. És un retorn.',
+    'data.desc': 'El que estan trobant els equips de RRHH i la recerca — en xifres.',
+    'data.stat1.num': '95%',
+    'data.stat1.desc': 'De les empreses que mesuren el ROI del benestar veuen retorns positius.',
+    'data.stat1.source': 'Wellhub, 2024',
+    'data.stat2.num': '9%',
+    'data.stat2.desc': 'Rotació voluntària amb programes de benestar sòlids — davant del 15% sense ells.',
+    'data.stat2.source': 'Infeedo',
+    'data.stat3.num': '3,27 $',
+    'data.stat3.desc': 'D\'estalvi sanitari per cada dòlar invertit — més 2,73 $ en menys absentisme.',
+    'data.stat3.source': 'Recerca Harvard / economia de la salut',
+    'data.stat4.num': '28%',
+    'data.stat4.desc': 'Menys estrès en programes de mindfulness corporatiu — i un 20% millor son.',
+    'data.stat4.source': 'Estudi intern d\'Aetna',
 
     'whatWeDo.eyebrow': 'Què fem',
     'whatWeDo.title': 'Sessions dissenyades per a la vostra jornada.',
@@ -331,8 +379,8 @@ const translations = {
     'footer.getInTouch': 'Contactar',
     'footer.tagline': 'Respira. Reconecta. Repite.',
 
-    'meta.title': 'Spiro — L\'equip que cuides és l\'equip que es queda.',
-    'meta.description': 'Ioga i pilates presencials per a empreses de Barcelona. Espai per respirar.',
+    'meta.title': 'Spiro - Ioga i pilates per a empreses de Barcelona, en remot i online.',
+    'meta.description': 'Ioga, pilates i tècniques de respiració presencials i en remot per a empreses de Barcelona.',
   },
 };
 
