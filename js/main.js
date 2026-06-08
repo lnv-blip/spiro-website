@@ -1,6 +1,6 @@
 const NEWSLETTER_ENDPOINT = 'https://formspree.io/f/mvznaayk';
 const NEWSLETTER_SUB_KEY = 'spiro_newsletter_subscribed';
-const EXIT_POPUP_DISMISS_KEY = 'spiro_exit_popup_dismissed';
+const EXIT_POPUP_DISMISS_KEY = 'spiro_exit_popup_dismissed_v2';
 const EXIT_POPUP_MIN_MS = 8000;
 const EXIT_POPUP_DISMISS_DAYS = 7;
 
@@ -112,8 +112,18 @@ function initExitPopup() {
     }, 280);
   };
 
+  const isExitIntent = (e) => {
+    if (e.clientY > 12) return false;
+    const target = e.relatedTarget || e.toElement;
+    return !target || target === document.documentElement || target.nodeName === 'HTML';
+  };
+
+  document.documentElement.addEventListener('mouseleave', (e) => {
+    if (isExitIntent(e)) openPopup();
+  });
+
   document.addEventListener('mouseout', (e) => {
-    if (!e.relatedTarget && e.clientY <= 8) openPopup();
+    if (isExitIntent(e)) openPopup();
   });
 
   let lastScrollY = window.scrollY;
@@ -122,13 +132,15 @@ function initExitPopup() {
     const scrollDepth = window.scrollY + window.innerHeight;
     const pageHeight = document.documentElement.scrollHeight;
 
-    if (scrollDepth / pageHeight > 0.35) hasScrolledDeep = true;
+    if (scrollDepth / pageHeight > 0.25) hasScrolledDeep = true;
 
-    const scrollingUp = currentScrollY < lastScrollY - 50;
-    const nearTop = currentScrollY < 100;
+    const scrollingUp = currentScrollY < lastScrollY - 40;
+    const nearTop = currentScrollY < 160;
     const isMobile = window.matchMedia('(max-width: 860px)').matches;
 
     if (isMobile && hasScrolledDeep && scrollingUp && nearTop) openPopup();
+
+    if (!isMobile && hasScrolledDeep && scrollingUp && nearTop) openPopup();
 
     lastScrollY = currentScrollY;
   }, { passive: true });
@@ -137,12 +149,12 @@ function initExitPopup() {
     popupEligible = true;
   }, EXIT_POPUP_MIN_MS);
 
-  closeBtn.addEventListener('click', () => closePopup(true));
+  closeBtn.addEventListener('click', () => closePopup(false));
   dismissBtn.addEventListener('click', () => closePopup(true));
-  backdrop.addEventListener('click', () => closePopup(true));
+  backdrop.addEventListener('click', () => closePopup(false));
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup(true);
+    if (e.key === 'Escape' && popup.classList.contains('is-open')) closePopup(false);
   });
 
   popupForm.addEventListener('submit', async (e) => {
