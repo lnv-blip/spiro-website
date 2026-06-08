@@ -213,6 +213,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initExitPopup();
 
   document.addEventListener('click', (e) => {
+    const emailLink = e.target.closest('a[href^="mailto:hello@bespiro.com"]');
+    if (emailLink) {
+      trackEvent('form_submit', {
+        page_language: document.documentElement.lang,
+      });
+      return;
+    }
+
     const btn = e.target.closest('a.btn, button.btn, a[data-i18n="nav.cta"]');
     if (!btn || btn.classList.contains('lang-btn')) return;
 
@@ -222,6 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
       link_url: btn.getAttribute('href') || undefined,
       page_language: document.documentElement.lang,
     });
+
+    if (btn.closest('.nav-cta') && btn.getAttribute('href') === '#contact') {
+      trackEvent('lets_talk_menu_click', { page_language: document.documentElement.lang });
+    }
+
+    if (btn.closest('.hero-cta') && btn.classList.contains('btn-primary')) {
+      trackEvent('lets_talk_hero_click', { page_language: document.documentElement.lang });
+    }
+
+    if (btn.closest('#newsletterForm, #exitPopupForm') && btn.type === 'submit') {
+      trackEvent('join_newsletter_click', { page_language: document.documentElement.lang });
+    }
   });
 
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
