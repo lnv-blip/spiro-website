@@ -1,5 +1,5 @@
 (() => {
-  const REVEAL_SELECTOR = '.sec-head, .ben, .off, .data-stat, .step';
+  const REVEAL_SELECTOR = '.sec-head, .photo-stack, .ben, .off, .data-stat, .step';
   const STAGGER_GROUPS = [
     { parent: '.ben-grid', child: '.ben' },
     { parent: '.off-grid', child: '.off' },
