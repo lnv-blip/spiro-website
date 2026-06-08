@@ -573,6 +573,7 @@ h1, h2, h3, h4 {
   line-height: 0.92;
   font-variant-numeric: tabular-nums;
   color: var(--signal);
+  white-space: nowrap;
 }
 
 .data-stat p {
