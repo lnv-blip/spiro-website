@@ -23,6 +23,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    (function () {
+      var theme = new URLSearchParams(window.location.search).get('theme');
+      if (!/^palette-[1-6]$/.test(theme)) return;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.write('<link rel="stylesheet" href="/css/themes.css">');
+    })();
+  </script>
 </head>
 <body>
 
@@ -487,5 +495,30 @@
   <script src="/js/i18n.js"></script>
   <script src="/js/motion.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      var theme = new URLSearchParams(window.location.search).get('theme');
+      if (!/^palette-[1-6]$/.test(theme)) return;
+
+      var labels = {
+        'palette-1': '1 · Cream & teal',
+        'palette-2': '2 · Yellow & blue',
+        'palette-3': '3 · Dusty blue',
+        'palette-4': '4 · Sage & yellow',
+        'palette-5': '5 · Twilight violet',
+        'palette-6': '6 · Forest calm'
+      };
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var bar = document.createElement('aside');
+        bar.className = 'theme-preview-bar';
+        bar.innerHTML =
+          'Preview: <strong>' + labels[theme] + '</strong>' +
+          ' · <a href="/theme-lab.html">Color lab</a>' +
+          ' · <a href="/">Exit preview</a>';
+        document.body.insertBefore(bar, document.body.firstChild);
+      });
+    })();
+  </script>
 </body>
 </html>

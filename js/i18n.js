@@ -508,9 +508,17 @@ function syncUrl(lang) {
   const hash = window.location.hash;
   const current = window.location.pathname.replace(/\/$/, '') || '/';
   const target = path.replace(/\/$/, '') || '/';
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get('theme');
 
-  if (current !== target || window.location.search) {
-    history.replaceState(null, '', path + hash);
+  if (theme) params.set('theme', theme);
+  else params.delete('theme');
+
+  const search = params.toString();
+  const nextUrl = path + (search ? `?${search}` : '') + hash;
+
+  if (current !== target || window.location.search !== (search ? `?${search}` : '')) {
+    history.replaceState(null, '', nextUrl);
   }
 }
 

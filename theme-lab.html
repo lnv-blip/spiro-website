@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="palette-1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spiro — Color palette lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <style>
+    .lab-error {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      padding: 14px 20px;
+      background: #b42318;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .lab-error code {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .lab-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 16px;
+      background: rgba(27, 25, 22, 0.92);
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+    }
+
+    .lab-bar button {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .lab-bar button.active {
+      background: #fff;
+      color: #1B1916;
+      border-color: #fff;
+    }
+
+    .lab-bar a {
+      color: rgba(255, 255, 255, 0.75);
+      margin-left: 8px;
+    }
+
+    .lab-wrap {
+      padding-bottom: 90px;
+    }
+
+    .lab-intro {
+      padding: 32px 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lab-intro h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 10px;
+    }
+
+    .lab-intro p {
+      color: var(--ink-70);
+      max-width: 62ch;
+      line-height: 1.55;
+    }
+
+    .lab-palette-name {
+      margin-top: 24px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-70);
+    }
+
+    .lab-swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .lab-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lab-swatch span {
+      display: block;
+      padding: 10px 12px;
+      background: var(--surface);
+      color: var(--ink-70);
+    }
+
+    .lab-swatch div {
+      height: 56px;
+    }
+
+    .lab-mockup {
+      margin-top: 28px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .lab-mockup-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bone);
+      padding: 28px 24px;
+    }
+
+    .lab-mockup-card h2 {
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.08;
+      margin: 12px 0 14px;
+      max-width: 18ch;
+    }
+
+    .lab-mockup-card .lead {
+      color: var(--ink-70);
+      max-width: 42ch;
+      margin-bottom: 20px;
+    }
+
+    .lab-mockup-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lab-mockup .newsletter-band {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .lab-mockup .newsletter {
+      padding: 32px 24px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+
+    .lab-preview-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .lab-preview-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 14px;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .lab-preview-actions a:hover {
+      border-color: var(--accent);
+      background: var(--bone);
+    }
+
+    .lab-frame {
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bone);
+    }
+
+    .lab-frame-head {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    .lab-frame iframe {
+      display: block;
+      width: 100%;
+      height: min(78vh, 960px);
+      border: none;
+      background: #fff;
+    }
+
+    @media (max-width: 720px) {
+      .lab-swatches { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div id="labError" class="lab-error" hidden>
+    Styles not loading — make sure you started the server from the project folder:
+    <code>cd spiro-website && python3 -m http.server 8000</code>
+    then open <code>http://localhost:8000/theme-lab.html</code>
+  </div>
+
+  <div class="lab-wrap">
+    <div class="wrap lab-intro">
+      <span class="eyebrow mono"><span class="dotmk"></span> Internal preview</span>
+      <h1>Color palette lab</h1>
+      <p>Pick a palette with the bar below. Samples update instantly, and the <em>full site preview</em> reloads underneath. You should also see a dark <strong>“Preview” banner</strong> at the top of the site when a theme is active.</p>
+      <p class="lab-palette-name" id="paletteName"></p>
+      <div class="lab-swatches" id="swatches"></div>
+
+      <div class="lab-mockup">
+        <div class="lab-mockup-card">
+          <span class="eyebrow mono"><span class="dotmk"></span> Sample UI</span>
+          <h2>The wellness benefit your team actually uses</h2>
+          <p class="lead">On-site and online yoga and pilates, run around your workday.</p>
+          <div class="lab-mockup-row">
+            <a class="btn btn-primary btn-arrow" href="#">Let's talk</a>
+            <a class="btn btn-ghost" href="#">See how it works</a>
+          </div>
+        </div>
+        <section class="newsletter">
+          <div class="newsletter-band">
+            <div class="newsletter-copy">
+              <span class="eyebrow mono"><span class="dotmk"></span> Newsletter</span>
+              <h2>Practical wellness notes for HR teams</h2>
+              <p>No spam — just ideas you can use this quarter.</p>
+            </div>
+            <div class="lab-mockup-row">
+              <a class="btn btn-light btn-arrow" href="#">Join the list</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="lab-preview-actions" id="previewActions"></div>
+
+      <div class="lab-frame">
+        <div class="lab-frame-head">
+          <span id="frameLabel">Full site preview</span>
+          <a href="#" id="frameOpen" target="_blank" rel="noopener">Open in new tab ↗</a>
+        </div>
+        <iframe id="preview" title="Full site preview" src="/?theme=palette-1"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="lab-bar">
+    <span>Theme:</span>
+    <button type="button" data-theme="default">Current</button>
+    <button type="button" data-theme="palette-1" class="active">1 · Cream & teal</button>
+    <button type="button" data-theme="palette-2">2 · Yellow & blue</button>
+    <button type="button" data-theme="palette-3">3 · Dusty blue</button>
+    <button type="button" data-theme="palette-4">4 · Sage & yellow</button>
+    <button type="button" data-theme="palette-5">5 · Twilight</button>
+    <button type="button" data-theme="palette-6">6 · Forest</button>
+    <a href="/">Live site ↗</a>
+  </div>
+
+  <script>
+    const COLOR_ROLES = ['Background', 'Sections', 'Primary', 'Text'];
+
+    const PALETTES = {
+      default: { name: 'Current (live)', colors: ['#F4EFE5', '#E8DCCB', '#2B38D4', '#1B1916'] },
+      'palette-1': { name: '1 · Cream & teal', colors: ['#EBE4D1', '#99C5D3', '#76B4C2', '#2A4A54'] },
+      'palette-2': { name: '2 · Yellow & blue', colors: ['#F3EDD8', '#B8D9EA', '#6AACC8', '#2D4F66'] },
+      'palette-3': { name: '3 · Dusty blue', colors: ['#FDFBF0', '#E6DDBB', '#89A9C9', '#3D5068'] },
+      'palette-4': { name: '4 · Sage & yellow', colors: ['#F2EDD6', '#C8DDD4', '#97B6BC', '#3A5058'] },
+      'palette-5': { name: '5 · Twilight violet', colors: ['#F6F3F8', '#E4DDF0', '#5B4B8A', '#2A2438'] },
+      'palette-6': { name: '6 · Forest calm', colors: ['#F4F1EA', '#DDE6DC', '#3D5C4A', '#1F2E26'] },
+    };
+
+    const swatchesEl = document.getElementById('swatches');
+    const paletteNameEl = document.getElementById('paletteName');
+    const previewActionsEl = document.getElementById('previewActions');
+    const frameLabelEl = document.getElementById('frameLabel');
+    const frameOpenEl = document.getElementById('frameOpen');
+    const iframe = document.getElementById('preview');
+    const buttons = document.querySelectorAll('.lab-bar button[data-theme]');
+
+    function previewHref(theme) {
+      return theme === 'default' ? '/' : `/?theme=${theme}`;
+    }
+
+    function renderSwatches(theme) {
+      const p = PALETTES[theme] || PALETTES.default;
+      const href = previewHref(theme);
+      paletteNameEl.textContent = `Showing: ${p.name}`;
+      swatchesEl.innerHTML = p.colors.map((hex, i) => `
+        <div class="lab-swatch">
+          <div style="background:${hex}"></div>
+          <span>${COLOR_ROLES[i]} · ${hex}</span>
+        </div>
+      `).join('');
+
+      previewActionsEl.innerHTML = `
+        <a href="${href}" target="_blank" rel="noopener">Open ${p.name} in new tab ↗</a>
+      `;
+      frameLabelEl.textContent = `Full site preview · ${p.name}`;
+      frameOpenEl.href = href;
+      iframe.src = href;
+    }
+
+    function applyTheme(theme) {
+      if (theme === 'default') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.theme === theme);
+      });
+      renderSwatches(theme);
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+    });
+
+    fetch('css/styles.css', { method: 'HEAD' })
+      .then((res) => {
+        if (!res.ok) document.getElementById('labError').hidden = false;
+      })
+      .catch(() => {
+        document.getElementById('labError').hidden = false;
+      });
+
+    renderSwatches('palette-1');
+  </script>
+</body>
+</html>
