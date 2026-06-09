@@ -236,7 +236,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (btn.closest('.hero-cta') && btn.classList.contains('btn-primary')) {
-      trackEvent('lets_talk_hero_click', { page_language: document.documentElement.lang });
+      trackEvent('hero_cta_click', { page_language: document.documentElement.lang });
+    }
+
+    if (btn.closest('.hero-cta') && btn.classList.contains('btn-ghost')) {
+      trackEvent('see_how_it_works_click', { page_language: document.documentElement.lang });
+    }
+
+    if (btn.closest('#contactForm') && btn.type === 'submit') {
+      trackEvent('send_enquiry_click', { page_language: document.documentElement.lang });
     }
 
     if (btn.closest('#newsletterForm, #exitPopupForm') && btn.type === 'submit') {
