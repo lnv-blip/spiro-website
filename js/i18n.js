@@ -87,6 +87,7 @@ const translations = {
     'cta.afterData.eyebrow': 'For your team',
     'cta.afterData.text': 'Ready to boost retention and engagement?',
     'cta.afterData.button': 'Let\'s talk',
+    'cta.afterData.button2': 'Get a custom quote',
 
     'calc.title': 'Simple, transparent pricing',
     'calc.subtitle': 'Our pricing scales with you',
@@ -281,6 +282,7 @@ const translations = {
     'cta.afterData.eyebrow': 'Para tu equipo',
     'cta.afterData.text': 'Aumentar la retención y productividad es posible',
     'cta.afterData.button': 'Hablemos',
+    'cta.afterData.button2': 'Pide un presupuesto',
 
     'calc.title': 'Precios simples y transparentes',
     'calc.subtitle': 'Nuestros precios crecen contigo',
@@ -472,6 +474,7 @@ const translations = {
     'cta.afterData.eyebrow': 'Per al teu equip',
     'cta.afterData.text': 'Augmentar la retenció i la productivitat és possible',
     'cta.afterData.button': 'Parlem',
+    'cta.afterData.button2': 'Demana un pressupost',
 
     'calc.title': 'Preus simples i transparents',
     'calc.subtitle': 'Els nostres preus creixen amb tu',
