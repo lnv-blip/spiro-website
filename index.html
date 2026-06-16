@@ -18,15 +18,15 @@
   <link rel="alternate" hreflang="es" href="https://bespiro.com/es">
   <link rel="alternate" hreflang="ca" href="https://bespiro.com/ca">
   <link rel="alternate" hreflang="x-default" href="https://bespiro.com/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%232B38D4'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='12' fill='%233A6A9E'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=20260616g">
   <script>
     (function () {
       var theme = new URLSearchParams(window.location.search).get('theme');
-      if (!/^palette-[1-6]$/.test(theme)) return;
+      if (!/^palette-[1-7]$/.test(theme)) return;
       document.documentElement.setAttribute('data-theme', theme);
       document.write('<link rel="stylesheet" href="/css/themes.css">');
     })();
@@ -55,6 +55,7 @@
           <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
           <a href="#offering" data-i18n="nav.whatWeDo">What we do</a>
           <a href="#how" data-i18n="nav.howItWorks">How it works</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="#about" data-i18n="nav.about">About</a>
           <a href="#contact" data-i18n="nav.connect">Contact</a>
         </div>
@@ -70,13 +71,13 @@
     </div>
   </nav>
 
-  <div class="intro breath-lines">
+  <div class="intro">
   <!-- Hero -->
   <header class="hero" id="top">
     <div class="wrap hero-inner">
       <span class="hero-eyebrow mono"><span class="dotmk"></span><span data-i18n="hero.eyebrow">Yoga · pilates · breathwork</span></span>
-      <h1 data-i18n-html="hero.title"><span class="hero-line">The wellness benefit</span><span class="hero-line">your team actually uses</span><span class="hero-line"><em>and HR never has to manage.</em></span></h1>
-      <p class="lead hero-lead" data-i18n-html="hero.subtitle"><span class="hero-subline">On-site and online yoga and pilates, run around your workday.</span><span class="hero-subline">The benefit your people actually use, and a reason they stay.</span></p>
+      <h1 data-i18n-html="hero.title"><span class="hero-line">The wellness benefit</span><span class="hero-line"><em>your team actually uses.</em></span></h1>
+      <p class="lead hero-lead" data-i18n="hero.subtitle">On-site and online corporate yoga and pilates, built around your workday.</p>
       <div class="hero-cta">
         <a class="btn btn-primary btn-arrow" href="#contact">
           <span data-i18n="hero.ctaPrimary">Let's talk</span>
@@ -93,8 +94,8 @@
       <div class="sec-head-row">
         <div class="sec-head">
           <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="benefits.eyebrow">Why HR teams choose Spiro</span></span>
-          <h2 data-i18n="benefits.title">Wellbeing that shows up for your people and your numbers.</h2>
-          <p class="lead" data-i18n="benefits.desc">A benefit people look forward to, with none of the admin and none of the yoga-studio intimidation.</p>
+          <h2 data-i18n="benefits.title">Wellbeing for your people and your numbers.</h2>
+          <p class="lead" data-i18n="benefits.desc">A benefit people actually use — zero admin, no studio intimidation.</p>
         </div>
         <div class="photo-stack">
           <img
@@ -124,25 +125,25 @@
         <article class="ben">
           <div class="n">01</div>
           <h3 data-i18n="benefits.engagement.title">Retention you can feel</h3>
-          <p data-i18n="benefits.engagement.desc">People who feel genuinely cared for stay longer. Spiro turns wellbeing from a line item into a reason to build a career with you.</p>
+          <p data-i18n="benefits.engagement.desc">People who feel cared for stay longer. Wellbeing becomes a reason to build a career with you.</p>
           <div class="tail" data-i18n="benefits.engagement.tail">Lower churn · stronger culture</div>
         </article>
         <article class="ben">
           <div class="n">02</div>
           <h3 data-i18n="benefits.satisfaction.title">A perk that gets used</h3>
-          <p data-i18n="benefits.satisfaction.desc">In-person or remotely, on the calendar, in a room people already walk past. Attendance that beats the gym stipend nobody redeems.</p>
+          <p data-i18n="benefits.satisfaction.desc">On the calendar, in a room they already know. Real attendance, not a voucher.</p>
           <div class="tail" data-i18n="benefits.satisfaction.tail">Real engagement, not a voucher</div>
         </article>
         <article class="ben">
           <div class="n">03</div>
           <h3 data-i18n="benefits.hr.title">Zero admin for you</h3>
-          <p data-i18n="benefits.hr.desc">We bring the instructors, the mats, the scheduling and the reminders. You pick a room and a time and we run the rest.</p>
+          <p data-i18n="benefits.hr.desc">Instructors, mats, scheduling, reminders — we handle it. You pick the room and time.</p>
           <div class="tail" data-i18n="benefits.hr.tail">We do everything for you</div>
         </article>
         <article class="ben">
           <div class="n">04</div>
           <h3 data-i18n="benefits.productivity.title">Inclusive by design</h3>
-          <p data-i18n="benefits.productivity.desc">All levels, all bodies, all languages, no experience needed. Gentle enough for beginners, real enough for the regulars.</p>
+          <p data-i18n="benefits.productivity.desc">All levels, bodies and languages. Beginners welcome.</p>
           <div class="tail" data-i18n="benefits.productivity.tail">Everyone on the team</div>
         </article>
       </div>
@@ -155,35 +156,53 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="data.eyebrow">The data</span></span>
-        <h2 data-i18n="data.title">Wellbeing isn't a cost. It's a return.</h2>
-        <p class="lead" data-i18n="data.desc">What HR teams and researchers are finding — in numbers.</p>
+        <h2 data-i18n="data.title">Wellbeing isn't a cost, it's an investment.</h2>
+        <p class="lead" data-i18n="data.desc">What the numbers say.</p>
       </div>
       <div class="data-band">
         <div class="data-grid">
           <article class="data-stat">
             <div class="data-num" data-i18n="data.stat1.num">95%</div>
-            <p data-i18n="data.stat1.desc">Of companies measuring wellness ROI see positive returns.</p>
+            <p data-i18n="data.stat1.desc">of companies measuring wellness ROI see positive returns.</p>
             <cite class="data-source mono" data-i18n="data.stat1.source">Wellhub, 2024</cite>
           </article>
           <article class="data-stat">
             <div class="data-num" data-i18n="data.stat2.num">40%</div>
-            <p data-i18n="data.stat2.desc">less of voluntary attrition with strong wellness programs vs. those companies without them.</p>
+            <p data-i18n="data.stat2.desc">less voluntary attrition with strong wellness programmes.</p>
             <cite class="data-source mono" data-i18n="data.stat2.source">Infeedo</cite>
           </article>
           <article class="data-stat">
             <div class="data-num" data-i18n="data.stat3.num">2,84€</div>
-            <p data-i18n="data.stat3.desc">in absenteeism savings returned per euro invested.</p>
+            <p data-i18n="data.stat3.desc">in absenteeism savings per euro invested.</p>
             <cite class="data-source mono" data-i18n="data.stat3.source">Harvard / health economics research</cite>
           </article>
           <article class="data-stat">
             <div class="data-num" data-i18n="data.stat4.num">28%</div>
-            <p data-i18n="data.stat4.desc">Reduction in stress through corporate mindfulness programs — and 20% better sleep.</p>
+            <p data-i18n="data.stat4.desc">less stress through corporate mindfulness programmes.</p>
             <cite class="data-source mono" data-i18n="data.stat4.source">Aetna internal study</cite>
           </article>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CTA after data -->
+  <div class="section-cta section-cta--after-data">
+    <div class="wrap">
+      <div class="section-cta-card">
+        <div class="section-cta-inner">
+          <div class="section-cta-copy">
+            <span class="eyebrow mono section-cta-eyebrow"><span class="dotmk"></span><span data-i18n="cta.afterData.eyebrow">For your team</span></span>
+            <p class="section-cta-text" data-i18n="cta.afterData.text">Ready to boost retention and engagement?</p>
+          </div>
+          <a class="btn btn-primary btn-arrow section-cta-btn" href="#contact">
+            <span data-i18n="cta.afterData.button">Let's talk</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- What we do + How it works -->
   <section class="offering" id="offering">
@@ -192,7 +211,7 @@
         <div class="sec-head">
           <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="whatWeDo.eyebrow">What we do</span></span>
           <h2 data-i18n="whatWeDo.title">Sessions, designed around your workday.</h2>
-          <p class="lead" data-i18n="whatWeDo.desc">Four formats that flex to your space, your headcount and the week your team is having.</p>
+          <p class="lead" data-i18n="whatWeDo.desc">Four formats for your space, headcount and schedule.</p>
         </div>
         <div class="photo-stack">
           <img
@@ -240,13 +259,15 @@
         <article class="off">
           <svg class="mk ic" viewBox="0 0 100 100" aria-hidden="true"><rect x="18" y="18" width="64" height="64" rx="14" fill="none" stroke="currentColor" stroke-width="5" opacity=".5"/><circle class="dot" cx="50" cy="50" r="11"/></svg>
           <h3 data-i18n="whatWeDo.workshops.title">Workshops & events</h3>
-          <p data-i18n="whatWeDo.workshops.desc">Wellbeing weeks, offsites and launch days. A centrepiece moment that makes the benefit visible across the company.</p>
-          <div class="fmt" data-i18n="whatWeDo.workshops.fmt">Custom · one-off or series</div>
+          <p data-i18n="whatWeDo.workshops.desc">Wellbeing weeks, offsites, team retreats, healthy food workshops and launch days. A centrepiece moment that makes the benefit visible across the company.</p>
+          <div class="fmt" data-i18n="whatWeDo.workshops.fmt">Retreats · workshops · launch days</div>
         </article>
       </div>
 
       <div class="how" id="how">
-        <div class="hl" data-i18n="howItWorks.eyebrow">How it works</div>
+        <div class="how-head sec-head">
+          <h2 data-i18n="howItWorks.eyebrow">How it works</h2>
+        </div>
         <div class="steps">
           <article class="step">
             <div class="sn">1</div>
@@ -261,7 +282,7 @@
           <article class="step">
             <div class="sn">3</div>
             <h4 data-i18n="howItWorks.step3.title">We show up & run it</h4>
-            <p data-i18n="howItWorks.step3.desc">Instructors, kit and reminders handled. Your team just rolls out a mat.</p>
+            <p data-i18n="howItWorks.step3.desc">We handle instructors, mats, materials, scheduling and reminders. Your team just rolls out a mat and shows up.</p>
           </article>
           <article class="step">
             <div class="sn">4</div>
@@ -269,6 +290,109 @@
             <p data-i18n="howItWorks.step4.desc">Simple attendance and sentiment reporting you can take to leadership.</p>
           </article>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing calculator -->
+  <section class="pricing-calc" id="pricing">
+    <div class="wrap">
+      <div class="sec-head calc-head">
+        <h2 data-i18n="calc.title">Simple, transparent pricing</h2>
+        <p class="lead" data-i18n="calc.subtitle">Our pricing scales with you</p>
+      </div>
+
+      <div class="calc-layout" id="pricingCalc">
+        <div class="calc-panel calc-inputs">
+          <div class="calc-field">
+            <span class="calc-label mono" data-i18n="calc.lengthLabel">Session length</span>
+            <div class="calc-segment" data-calc-group="length" role="group" aria-label="Session length">
+              <button type="button" class="calc-segment-btn" data-calc-option="30" aria-pressed="false" data-i18n="calc.length30">30 min</button>
+              <button type="button" class="calc-segment-btn active" data-calc-option="45" aria-pressed="true" data-i18n="calc.length45">45 min</button>
+              <button type="button" class="calc-segment-btn" data-calc-option="60" aria-pressed="false" data-i18n="calc.length60">60 min</button>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <span class="calc-label mono" data-i18n="calc.frequencyLabel">Sessions per week</span>
+            <div class="calc-segment" data-calc-group="frequency" role="group" aria-label="Sessions per week">
+              <button type="button" class="calc-segment-btn" data-calc-option="1" aria-pressed="false" data-i18n="calc.frequency1">1×</button>
+              <button type="button" class="calc-segment-btn active" data-calc-option="2" aria-pressed="true" data-i18n="calc.frequency2">2×</button>
+              <button type="button" class="calc-segment-btn" data-calc-option="3" aria-pressed="false" data-i18n="calc.frequency3">3×</button>
+            </div>
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-top">
+              <span class="calc-label mono" data-i18n="calc.employeesLabel">Employees</span>
+              <output class="calc-value-pill mono" id="calcEmployeesValue" for="calcEmployees">50</output>
+            </div>
+            <input
+              class="calc-slider"
+              type="range"
+              id="calcEmployees"
+              name="employees"
+              min="5"
+              max="500"
+              value="50"
+              step="5"
+            >
+            <p class="calc-participants mono" id="calcParticipants">~18 participants*</p>
+            <details class="calc-note">
+              <summary data-i18n="calc.participantsToggle">* How we estimate participation</summary>
+              <p data-i18n="calc.participantsExplain">Participation rates vary by company size. We estimate between 15–60% of employees joining per class depending on team size. Your actual numbers will be confirmed on a call.</p>
+            </details>
+          </div>
+
+          <div class="calc-field">
+            <span class="calc-label mono" data-i18n="calc.planLabel">Commitment</span>
+            <div class="calc-plans" data-calc-group="plan" role="group" aria-label="Commitment">
+              <button type="button" class="calc-plan-btn active" data-calc-option="monthly" aria-pressed="true">
+                <span class="calc-plan-title" data-i18n="calc.planMonthly">Monthly</span>
+                <span class="calc-plan-sub" data-i18n="calc.planMonthlySub">No discount, cancel anytime</span>
+              </button>
+              <button type="button" class="calc-plan-btn" data-calc-option="quarterly" aria-pressed="false">
+                <span class="calc-plan-badge mono" data-i18n="calc.planPopular">Most popular</span>
+                <span class="calc-plan-title" data-i18n="calc.planQuarterly">3 months</span>
+                <span class="calc-plan-sub" data-i18n="calc.planQuarterlySub">Save 10% · billed quarterly</span>
+              </button>
+              <button type="button" class="calc-plan-btn" data-calc-option="semiannual" aria-pressed="false">
+                <span class="calc-plan-title" data-i18n="calc.planSemiannual">6 months</span>
+                <span class="calc-plan-sub" data-i18n="calc.planSemiannualSub">Save 18% · billed every 6 months</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-panel calc-output">
+          <div class="calc-hero">
+            <span class="calc-hero-label mono" id="calcHeroLabel" data-i18n="calc.perPersonLabel">Per person / session</span>
+            <div class="calc-hero-value" id="calcHeroValue">€5 + IVA</div>
+          </div>
+          <p class="calc-breakdown mono" id="calcBreakdown"></p>
+          <div class="calc-stats">
+            <div class="calc-stat">
+              <span class="calc-stat-label" data-i18n="calc.monthlyTotal">Estimated monthly total</span>
+              <strong class="calc-stat-value" id="calcMonthly">€810 + IVA</strong>
+            </div>
+            <div class="calc-stat hidden" id="calcSavingsWrap">
+              <span class="calc-stat-label" data-i18n="calc.youSave">You save</span>
+              <strong class="calc-stat-value calc-stat-value--accent" id="calcSavings">€876 + IVA</strong>
+              <span class="calc-stat-note" data-i18n="calc.vsMonthly">vs paying monthly</span>
+            </div>
+            <div class="calc-stat hidden" id="calcBilledWrap">
+              <span class="calc-stat-label" id="calcBilledLabel" data-i18n="calc.billedSemiannual">Billed every 6 months</span>
+              <strong class="calc-stat-value" id="calcBilled">€3984 + IVA</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-cta">
+        <a class="btn btn-primary btn-arrow" href="#contact">
+          <span data-i18n="calc.cta">Get a custom quote</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -291,16 +415,16 @@
             <circle class="dot" cx="50" cy="50" r="12"/>
           </svg>
           <div class="txt">
-            <span data-i18n="about.badgeTitle">Laura, Spiro owner</span>
+            <span data-i18n="about.badgeTitle">Laura, Spiro founder</span>
             <span data-i18n="about.badgeSub">Yoga teacher since 2020</span>
           </div>
         </div>
       </div>
       <div class="about-copy">
         <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="about.eyebrow">About us</span></span>
-        <h2 data-i18n="about.title">Spiro is Latin for "I breathe."</h2>
+        <h2 data-i18n-html="about.title">Spiro is Latin for "<span class="title-hl">I breathe</span>."</h2>
         <p data-i18n-html="about.p1">We started Spiro in Barcelona around a simple belief: <span class="hl">wellbeing isn't a perk, it's a basic for all companies.</span> A team that can pause, reconnect and breathe does better work, and stays.</p>
-        <p data-i18n="about.p2">So we made it effortless to bring real movement into the workday. No memberships, no clichés, no incense. Just considered, in-person sessions your people actually want to be in, run by certified instructors we'd trust with our own teams. Available in English, Spanish or Catalan.</p>
+        <p data-i18n="about.p2">Real movement in the workday — no memberships, no clichés. Certified instructors your people actually want to see. English, Spanish or Catalan.</p>
         <div class="about-meta">
           <div class="m"><div class="k" data-i18n="about.meta1.k">Barcelona</div><div class="v" data-i18n="about.meta1.v">Based and raised</div></div>
           <div class="m"><div class="k" data-i18n="about.meta2.k">Remote & in-person</div><div class="v" data-i18n="about.meta2.v">We adapt to your team</div></div>
@@ -317,7 +441,7 @@
       <div class="contact-info-block">
         <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="connect.eyebrow">Contact</span></span>
         <h2 data-i18n="connect.title">Let's give your team room to breathe.</h2>
-        <p class="lead" data-i18n="connect.desc">Tell us a little about your company and we'll come back to you soon.</p>
+        <p class="lead" data-i18n="connect.desc">Tell us about your company. We'll be back within a day.</p>
         <div class="contact-info">
           <div class="ci-item">
             <div class="k" data-i18n="connect.emailLabel">Email</div>
@@ -393,7 +517,7 @@
         <div class="newsletter-copy">
           <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="newsletter.eyebrow">Newsletter</span></span>
           <h2 data-i18n="newsletter.title">Wellness insights for HR teams</h2>
-          <p data-i18n="newsletter.desc">Occasional notes on events, corporate wellbeing and what actually works. No spam, just valuable content directly to your inbox.</p>
+          <p data-i18n="newsletter.desc">Notes on corporate wellbeing and what works. No spam.</p>
         </div>
         <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/mvznaayk" method="POST" novalidate>
           <div class="newsletter-row" id="newsletterFields">
@@ -431,6 +555,7 @@
             <div class="h" data-i18n="footer.explore">Explore</div>
             <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
             <a href="#offering" data-i18n="nav.whatWeDo">What we do</a>
+            <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
             <a href="#about" data-i18n="nav.about">About</a>
             <a href="#contact" data-i18n="nav.connect">Contact</a>
           </div>
@@ -492,13 +617,14 @@
     </div>
   </div>
 
-  <script src="/js/i18n.js"></script>
-  <script src="/js/motion.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="/js/i18n.js?v=20260616c"></script>
+  <script src="/js/pricing.js?v=20260616"></script>
+  <script src="/js/motion.js?v=20260616"></script>
+  <script src="/js/main.js?v=20260616"></script>
   <script>
     (function () {
       var theme = new URLSearchParams(window.location.search).get('theme');
-      if (!/^palette-[1-6]$/.test(theme)) return;
+      if (!/^palette-[1-7]$/.test(theme)) return;
 
       var labels = {
         'palette-1': '1 · Cream & teal',
@@ -506,7 +632,8 @@
         'palette-3': '3 · Dusty blue',
         'palette-4': '4 · Sage & yellow',
         'palette-5': '5 · Twilight violet',
-        'palette-6': '6 · Forest calm'
+        'palette-6': '6 · Forest calm',
+        'palette-7': '7 · Steel'
       };
 
       document.addEventListener('DOMContentLoaded', function () {

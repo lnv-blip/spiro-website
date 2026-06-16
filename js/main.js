@@ -47,6 +47,8 @@ async function submitNewsletter(email, source) {
 function getButtonLocation(el) {
   if (el.closest('.hero-cta')) return 'hero';
   if (el.closest('.nav-cta')) return 'nav';
+  if (el.closest('.section-cta--after-data')) return 'cta_after_data';
+  if (el.closest('.pricing-calc')) return 'pricing_calc';
   if (el.closest('#contactForm')) return 'contact_form';
   if (el.closest('#newsletterForm')) return 'newsletter';
   if (el.closest('#exitPopup')) return 'exit_popup';
