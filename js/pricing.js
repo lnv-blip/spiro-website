@@ -1,28 +1,31 @@
 (() => {
   const WEEKS_PER_MONTH = 4.33;
-  const RAMP_START = 21;
-  const RAMP_END = 50;
   const LENGTH_MULT = { 30: 1, 45: 1.25, 60: 1.5 };
   const PLAN_MULT = { monthly: 1, quarterly: 0.9, semiannual: 0.82 };
   const PLAN_MONTHS = { monthly: 1, quarterly: 3, semiannual: 6 };
   const FREQ_FLOOR = { 1: 250, 2: 400, 3: 500 };
 
+  // Marginal brackets (like tax brackets): the rate applies only to the
+  // portion within each band. This keeps participants and price monotonic,
+  // i.e. a bigger company never shows fewer participants or a lower total.
   const PARTICIPATION_TIERS = [
-    { max: 15, rate: 0.6 },
-    { max: 30, rate: 0.45 },
-    { max: 60, rate: 0.35 },
-    { max: 150, rate: 0.25 },
-    { max: 300, rate: 0.2 },
-    { max: Infinity, rate: 0.15 },
+    { upTo: 15, rate: 0.6 },
+    { upTo: 30, rate: 0.33 },
+    { upTo: 60, rate: 0.23 },
+    { upTo: 150, rate: 0.16 },
+    { upTo: 300, rate: 0.13 },
+    { upTo: Infinity, rate: 0.1 },
   ];
 
-  const COMPANY_RATE_TIERS = [
-    { max: 20, rate: null },
-    { max: 40, rate: 5.5 },
-    { max: 75, rate: 4 },
-    { max: 150, rate: 2.8 },
-    { max: 300, rate: 2 },
-    { max: Infinity, rate: 1.5 },
+  // Marginal €/person/session by participant count (volume discount applies
+  // to each additional participant, not retroactively to all of them).
+  const PARTICIPANT_RATE_TIERS = [
+    { upTo: 10, rate: 4.06 },
+    { upTo: 20, rate: 2.65 },
+    { upTo: 40, rate: 1.79 },
+    { upTo: 80, rate: 1.33 },
+    { upTo: 160, rate: 1.01 },
+    { upTo: Infinity, rate: 0.78 },
   ];
 
   const state = {
@@ -52,16 +55,20 @@
     return `${formatPrice(amount)} ${t('calc.vatSuffix')}`;
   }
 
-  function participationRate(employees) {
-    return PARTICIPATION_TIERS.find((tier) => employees <= tier.max).rate;
+  function marginalSum(value, tiers) {
+    let prev = 0;
+    let total = 0;
+    for (const tier of tiers) {
+      const span = Math.min(value, tier.upTo) - prev;
+      if (span > 0) total += span * tier.rate;
+      prev = tier.upTo;
+      if (value <= tier.upTo) break;
+    }
+    return total;
   }
 
   function estimateParticipants(employees) {
-    return Math.max(1, Math.round(employees * participationRate(employees)));
-  }
-
-  function companyRate(employees) {
-    return COMPANY_RATE_TIERS.find((tier) => employees <= tier.max).rate;
+    return Math.max(1, Math.round(marginalSum(employees, PARTICIPATION_TIERS)));
   }
 
   function monthlyFloor(frequency) {
@@ -72,76 +79,36 @@
     return Math.round(frequency * WEEKS_PER_MONTH);
   }
 
-  function resolveMonthly(employees, floor, rawMonthly, baseRate, lengthMult) {
-    if (employees <= 20) {
-      return {
-        monthlyBeforePlan: floor,
-        perPersonSession: null,
-        showFlatHero: true,
-        useFloorBreakdown: true,
-      };
-    }
-
-    const perPersonSession = Math.round(baseRate * lengthMult);
-    const effective = Math.max(floor, rawMonthly);
-
-    if (employees >= RAMP_END) {
-      const belowFloor = rawMonthly < floor;
-      return {
-        monthlyBeforePlan: effective,
-        perPersonSession,
-        showFlatHero: belowFloor,
-        useFloorBreakdown: belowFloor,
-      };
-    }
-
-    const ramp = (employees - RAMP_START) / (RAMP_END - RAMP_START);
-    const ramped = Math.round(floor + (effective - floor) * ramp);
-
-    return {
-      monthlyBeforePlan: ramped,
-      perPersonSession,
-      showFlatHero: false,
-      useFloorBreakdown: false,
-    };
-  }
-
   function calculate() {
     const participants = estimateParticipants(state.employees);
     const sessionsMonth = sessionsPerMonth(state.frequency);
     const floor = monthlyFloor(state.frequency);
     const lengthMult = LENGTH_MULT[state.length] || 1;
-    const baseRate = companyRate(state.employees);
 
-    let rawMonthly = 0;
-    if (baseRate !== null) {
-      rawMonthly = Math.round(baseRate * participants * lengthMult * sessionsMonth);
-    }
+    const perSessionCost = marginalSum(participants, PARTICIPANT_RATE_TIERS) * lengthMult;
+    const perPersonSession = Math.round(perSessionCost / participants);
+    const rawMonthly = Math.round(perSessionCost * sessionsMonth);
 
-    const resolved = resolveMonthly(
-      state.employees,
-      floor,
-      rawMonthly,
-      baseRate,
-      lengthMult
-    );
+    const monthlyBeforePlan = Math.max(floor, rawMonthly);
+    const useFloorBreakdown = rawMonthly <= floor;
+    const showFlatHero = useFloorBreakdown;
 
     const planMult = PLAN_MULT[state.plan] || 1;
-    const monthlyTotal = Math.round(resolved.monthlyBeforePlan * planMult);
+    const monthlyTotal = Math.round(monthlyBeforePlan * planMult);
     const months = PLAN_MONTHS[state.plan];
     const billedTotal = monthlyTotal * months;
     const savings = state.plan === 'monthly'
       ? 0
-      : (resolved.monthlyBeforePlan - monthlyTotal) * months;
+      : (monthlyBeforePlan - monthlyTotal) * months;
 
     return {
       participants,
-      perPersonSession: resolved.perPersonSession,
+      perPersonSession,
       sessionsMonth,
       floor,
-      showFlatHero: resolved.showFlatHero,
-      useFloorBreakdown: resolved.useFloorBreakdown,
-      monthlyBeforePlan: resolved.monthlyBeforePlan,
+      showFlatHero,
+      useFloorBreakdown,
+      monthlyBeforePlan,
       monthlyTotal,
       billedTotal,
       savings,
