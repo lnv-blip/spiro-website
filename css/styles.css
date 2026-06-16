@@ -1462,7 +1462,7 @@ h1, h2, h3, h4 {
   margin-top: 20px;
 }
 
-.about-copy h2 .title-hl {
+.title-hl {
   background: rgba(var(--accent-rgb), 0.28);
   color: inherit;
   padding: 0.02em 0.18em;
