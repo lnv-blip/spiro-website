@@ -51,6 +51,11 @@
     return `€${Math.round(amount)}`;
   }
 
+  function formatRate(amount) {
+    const rounded = Math.round(amount * 100) / 100;
+    return `€${rounded.toFixed(2).replace(/\.?0+$/, '')}`;
+  }
+
   function withVat(amount) {
     return `${formatPrice(amount)} ${t('calc.vatSuffix')}`;
   }
@@ -86,8 +91,10 @@
     const lengthMult = LENGTH_MULT[state.length] || 1;
 
     const perSessionCost = marginalSum(participants, PARTICIPANT_RATE_TIERS) * lengthMult;
-    const perPersonSession = Math.round(perSessionCost / participants);
-    const rawMonthly = Math.round(perSessionCost * sessionsMonth);
+    // Round the per-person rate to cents and derive the monthly from it, so the
+    // numbers the user sees tie out: rate × participants × sessions = monthly.
+    const perPersonSession = Math.round((perSessionCost / participants) * 100) / 100;
+    const rawMonthly = Math.round(perPersonSession * participants * sessionsMonth);
 
     const monthlyBeforePlan = Math.max(floor, rawMonthly);
     const useFloorBreakdown = rawMonthly <= floor;
@@ -171,7 +178,7 @@
     if (heroValue) {
       heroValue.textContent = result.showFlatHero
         ? `${t('calc.floorHero').replace('{n}', result.floor)} ${t('calc.vatSuffix')}`
-        : withVat(result.perPersonSession);
+        : `${formatRate(result.perPersonSession)} ${t('calc.vatSuffix')}`;
     }
 
     if (breakdownOut) breakdownOut.textContent = buildBreakdown(result);

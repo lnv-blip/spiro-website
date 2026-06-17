@@ -74,6 +74,7 @@ const translations = {
     'whatWeDo.workshops.desc': 'Wellbeing weeks, offsites, team retreats, healthy food workshops and launch days. A centrepiece moment that makes the benefit visible across the company.',
     'whatWeDo.workshops.fmt': 'Retreats · workshops · launch days',
 
+    'howItWorks.kicker': 'Step by step',
     'howItWorks.eyebrow': 'How it works',
     'howItWorks.step1.title': 'Tell us your space',
     'howItWorks.step1.desc': 'Team size, remote or in person, rooms, the rhythm of your week. A 30-minute call is all it takes.',
@@ -89,8 +90,9 @@ const translations = {
     'cta.afterData.button': 'Let\'s talk',
     'cta.afterData.button2': 'Get a custom quote',
 
-    'calc.title': 'Simple, transparent pricing',
-    'calc.subtitle': 'Our pricing scales with you',
+    'calc.kicker': 'Pay per use, not per FTE',
+    'calc.title': 'Simple pricing that scales with your company',
+    'calc.subtitle': 'The calculator shows indicative prices, get in touch for a custom quote.',
     'calc.lengthLabel': 'Session length',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
@@ -269,6 +271,7 @@ const translations = {
     'whatWeDo.workshops.desc': 'Semanas de bienestar, offsites, retiros de equipo, talleres de cocina saludable y jornadas de lanzamiento. Un momento central que hace visible el beneficio en toda la empresa.',
     'whatWeDo.workshops.fmt': 'Retiros · talleres · lanzamientos',
 
+    'howItWorks.kicker': 'Paso a paso',
     'howItWorks.eyebrow': 'Cómo funciona',
     'howItWorks.step1.title': 'Explícanos la situación',
     'howItWorks.step1.desc': 'Tamaño del equipo, remoto o presencial, salas, ritmo de la semana. Una llamada de 30 minutos es suficiente.',
@@ -284,8 +287,9 @@ const translations = {
     'cta.afterData.button': 'Hablemos',
     'cta.afterData.button2': 'Pide un presupuesto',
 
-    'calc.title': 'Precios simples y transparentes',
-    'calc.subtitle': 'Nuestros precios crecen contigo',
+    'calc.kicker': 'Paga por uso, no por FTE',
+    'calc.title': 'Precios simples y que escalan con tu empresa',
+    'calc.subtitle': 'La calculadora muestra precios orientativos, ponte en contacto con nosotros para recibir un presupuesto a medida.',
     'calc.lengthLabel': 'Duración de la sesión',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
@@ -461,6 +465,7 @@ const translations = {
     'whatWeDo.workshops.desc': 'Setmanes de benestar, offsites, retirs d\'equip, tallers de cuina saludable i jornades de llançament. Un moment central que fa visible el benefici a tota l\'empresa.',
     'whatWeDo.workshops.fmt': 'Retirs · tallers · llançaments',
 
+    'howItWorks.kicker': 'Pas a pas',
     'howItWorks.eyebrow': 'Com funciona',
     'howItWorks.step1.title': 'Explica\'ns la situació',
     'howItWorks.step1.desc': 'Mida de l\'equip, remot o presencial, sales, ritme de la setmana. Una trucada de 30 minuts n\'hi ha prou.',
@@ -476,8 +481,9 @@ const translations = {
     'cta.afterData.button': 'Parlem',
     'cta.afterData.button2': 'Demana un pressupost',
 
-    'calc.title': 'Preus simples i transparents',
-    'calc.subtitle': 'Els nostres preus creixen amb tu',
+    'calc.kicker': 'Paga per ús, no per FTE',
+    'calc.title': 'Preus simples que escalen amb la teva empresa',
+    'calc.subtitle': 'La calculadora mostra preus orientatius, contacta amb nosaltres per rebre un pressupost a mida.',
     'calc.lengthLabel': 'Durada de la sessió',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
