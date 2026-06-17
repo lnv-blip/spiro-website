@@ -191,6 +191,7 @@ const translations = {
     'footer.getInTouch': 'Get in touch',
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+    'footer.cookies': 'Cookie Policy',
 
     'meta.title': 'Spiro — Breathing room for your team',
     'meta.description': 'On-site yoga, breathwork, and pilates for Barcelona companies. Breathing room for your team.',
@@ -385,6 +386,7 @@ const translations = {
     'footer.getInTouch': 'Contactar',
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+    'footer.cookies': 'Política de cookies',
 
     'meta.title': 'Spiro | Yoga y pilates para empresas, en persona y online',
     'meta.description': 'Yoga, pilates y técnicas de respiración para empresas. Beneficios corporativos reales para tu equipo.',
@@ -579,6 +581,7 @@ const translations = {
     'footer.getInTouch': 'Contactar',
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
+    'footer.cookies': 'Política de galetes',
 
     'meta.title': 'Spiro - Ioga i pilates per a empreses de Barcelona, en remot i online.',
     'meta.description': 'Ioga, pilates i tècniques de respiració presencials i en remot per a empreses de Barcelona.',

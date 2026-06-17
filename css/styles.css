@@ -2097,6 +2097,8 @@ footer {
 }
 
 .foot-bottom .mono { font-size: 11px; }
+.foot-bottom a { color: inherit; text-decoration: none; transition: color 0.15s; }
+.foot-bottom a:hover { color: rgba(var(--bone-rgb), 0.85); text-decoration: underline; }
 
 /* ── Responsive ── */
 
