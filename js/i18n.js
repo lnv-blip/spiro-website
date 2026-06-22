@@ -92,7 +92,8 @@ const translations = {
 
     'calc.kicker': 'Pay per use, not per FTE',
     'calc.title': 'Simple pricing that scales with your company',
-    'calc.subtitle': 'The calculator shows indicative prices, get in touch for a custom quote.',
+    'calc.subtitle': 'Indicative pricing, get in touch for a custom quote.',
+    'pricing.bannerText': 'Pricing starts at <strong>€50 per session</strong>',
     'calc.lengthLabel': 'Session length',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
@@ -192,6 +193,7 @@ const translations = {
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
     'footer.cookies': 'Cookie Policy',
+    'footer.cookieSettings': 'Cookie settings',
 
     'meta.title': 'Spiro — Breathing room for your team',
     'meta.description': 'On-site yoga, breathwork, and pilates for Barcelona companies. Breathing room for your team.',
@@ -290,7 +292,8 @@ const translations = {
 
     'calc.kicker': 'Paga por uso, no por FTE',
     'calc.title': 'Precios simples y que escalan con tu empresa',
-    'calc.subtitle': 'La calculadora muestra precios orientativos, ponte en contacto con nosotros para recibir un presupuesto a medida.',
+    'calc.subtitle': 'Precios orientativos, ponte en contacto con nosotros para recibir un presupuesto a medida.',
+    'pricing.bannerText': 'Los precios empiezan en <strong>50€ por sesión</strong>',
     'calc.lengthLabel': 'Duración de la sesión',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
@@ -387,6 +390,7 @@ const translations = {
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
     'footer.cookies': 'Política de cookies',
+    'footer.cookieSettings': 'Configuración de cookies',
 
     'meta.title': 'Spiro | Yoga y pilates para empresas, en persona y online',
     'meta.description': 'Yoga, pilates y técnicas de respiración para empresas. Beneficios corporativos reales para tu equipo.',
@@ -485,7 +489,8 @@ const translations = {
 
     'calc.kicker': 'Paga per ús, no per FTE',
     'calc.title': 'Preus simples que escalen amb la teva empresa',
-    'calc.subtitle': 'La calculadora mostra preus orientatius, contacta amb nosaltres per rebre un pressupost a mida.',
+    'calc.subtitle': 'Preus orientatius, contacta amb nosaltres per rebre un pressupost a mida.',
+    'pricing.bannerText': 'Els preus comencen a <strong>50€ per sessió</strong>',
     'calc.lengthLabel': 'Durada de la sessió',
     'calc.length30': '30 min',
     'calc.length45': '45 min',
@@ -582,6 +587,7 @@ const translations = {
     'footer.newsletter': 'Newsletter',
     'footer.tagline': 'Respira. Reconecta. Repite.',
     'footer.cookies': 'Política de galetes',
+    'footer.cookieSettings': 'Configuració de galetes',
 
     'meta.title': 'Spiro - Ioga i pilates per a empreses de Barcelona, en remot i online.',
     'meta.description': 'Ioga, pilates i tècniques de respiració presencials i en remot per a empreses de Barcelona.',

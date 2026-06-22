@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8G8TRVKV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YC8G8TRVKV');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spiro | Corporate Yoga, Breathwork & Pilates, in person and on-line</title>
@@ -22,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=20260617c">
+  <link rel="stylesheet" href="/css/styles.css?v=20260622b">
   <script>
     (function () {
       var theme = new URLSearchParams(window.location.search).get('theme');
@@ -293,106 +285,22 @@
     </div>
   </section>
 
-  <!-- Pricing calculator -->
-  <section class="pricing-calc" id="pricing">
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
     <div class="wrap">
       <div class="sec-head calc-head">
         <span class="eyebrow mono"><span class="dotmk"></span><span data-i18n="calc.kicker">Pay per use, not per FTE</span></span>
         <h2 data-i18n="calc.title">Simple pricing that scales with your company</h2>
-        <p class="lead" data-i18n="calc.subtitle">The calculator shows indicative prices, get in touch for a custom quote.</p>
       </div>
 
-      <div class="calc-layout" id="pricingCalc">
-        <div class="calc-panel calc-inputs">
-          <div class="calc-field">
-            <span class="calc-label mono" data-i18n="calc.lengthLabel">Session length</span>
-            <div class="calc-segment" data-calc-group="length" role="group" aria-label="Session length">
-              <button type="button" class="calc-segment-btn" data-calc-option="30" aria-pressed="false" data-i18n="calc.length30">30 min</button>
-              <button type="button" class="calc-segment-btn active" data-calc-option="45" aria-pressed="true" data-i18n="calc.length45">45 min</button>
-              <button type="button" class="calc-segment-btn" data-calc-option="60" aria-pressed="false" data-i18n="calc.length60">60 min</button>
-            </div>
-          </div>
-
-          <div class="calc-field">
-            <span class="calc-label mono" data-i18n="calc.frequencyLabel">Sessions per week</span>
-            <div class="calc-segment" data-calc-group="frequency" role="group" aria-label="Sessions per week">
-              <button type="button" class="calc-segment-btn" data-calc-option="1" aria-pressed="false" data-i18n="calc.frequency1">1×</button>
-              <button type="button" class="calc-segment-btn active" data-calc-option="2" aria-pressed="true" data-i18n="calc.frequency2">2×</button>
-              <button type="button" class="calc-segment-btn" data-calc-option="3" aria-pressed="false" data-i18n="calc.frequency3">3×</button>
-            </div>
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-top">
-              <span class="calc-label mono" data-i18n="calc.employeesLabel">Employees</span>
-              <output class="calc-value-pill mono" id="calcEmployeesValue" for="calcEmployees">50</output>
-            </div>
-            <input
-              class="calc-slider"
-              type="range"
-              id="calcEmployees"
-              name="employees"
-              min="5"
-              max="500"
-              value="50"
-              step="5"
-            >
-            <p class="calc-participants mono" id="calcParticipants">~18 participants*</p>
-            <details class="calc-note">
-              <summary data-i18n="calc.participantsToggle">* How we estimate participation</summary>
-              <p data-i18n="calc.participantsExplain">Participation rates vary by company size. We estimate between 15–60% of employees joining per class depending on team size. Your actual numbers will be confirmed on a call.</p>
-            </details>
-          </div>
-
-          <div class="calc-field">
-            <span class="calc-label mono" data-i18n="calc.planLabel">Commitment</span>
-            <div class="calc-plans" data-calc-group="plan" role="group" aria-label="Commitment">
-              <button type="button" class="calc-plan-btn active" data-calc-option="monthly" aria-pressed="true">
-                <span class="calc-plan-title" data-i18n="calc.planMonthly">Monthly</span>
-                <span class="calc-plan-sub" data-i18n="calc.planMonthlySub">No discount, cancel anytime</span>
-              </button>
-              <button type="button" class="calc-plan-btn" data-calc-option="quarterly" aria-pressed="false">
-                <span class="calc-plan-badge mono" data-i18n="calc.planPopular">Most popular</span>
-                <span class="calc-plan-title" data-i18n="calc.planQuarterly">3 months</span>
-                <span class="calc-plan-sub" data-i18n="calc.planQuarterlySub">Save 10% · billed quarterly</span>
-              </button>
-              <button type="button" class="calc-plan-btn" data-calc-option="semiannual" aria-pressed="false">
-                <span class="calc-plan-title" data-i18n="calc.planSemiannual">6 months</span>
-                <span class="calc-plan-sub" data-i18n="calc.planSemiannualSub">Save 18% · billed every 6 months</span>
-              </button>
-            </div>
-          </div>
+      <div class="pricing-banner">
+        <div class="pricing-banner-inner">
+          <p class="pricing-banner-text" data-i18n-html="pricing.bannerText">Pricing starts at <strong>€50 per session</strong></p>
+          <a class="btn btn-primary btn-arrow" href="#contact">
+            <span data-i18n="calc.cta">Get a custom quote</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-
-        <div class="calc-panel calc-output">
-          <div class="calc-hero">
-            <span class="calc-hero-label mono" id="calcHeroLabel" data-i18n="calc.perPersonLabel">Per person / session</span>
-            <div class="calc-hero-value" id="calcHeroValue">€5 + IVA</div>
-          </div>
-          <p class="calc-breakdown mono" id="calcBreakdown"></p>
-          <div class="calc-stats">
-            <div class="calc-stat">
-              <span class="calc-stat-label" data-i18n="calc.monthlyTotal">Estimated monthly total</span>
-              <strong class="calc-stat-value" id="calcMonthly">€810 + IVA</strong>
-            </div>
-            <div class="calc-stat hidden" id="calcSavingsWrap">
-              <span class="calc-stat-label" data-i18n="calc.youSave">You save</span>
-              <strong class="calc-stat-value calc-stat-value--accent" id="calcSavings">€876 + IVA</strong>
-              <span class="calc-stat-note" data-i18n="calc.vsMonthly">vs paying monthly</span>
-            </div>
-            <div class="calc-stat hidden" id="calcBilledWrap">
-              <span class="calc-stat-label" id="calcBilledLabel" data-i18n="calc.billedSemiannual">Billed every 6 months</span>
-              <strong class="calc-stat-value" id="calcBilled">€3984 + IVA</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="calc-cta">
-        <a class="btn btn-primary btn-arrow" href="#contact">
-          <span data-i18n="calc.cta">Get a custom quote</span>
-          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
       </div>
     </div>
   </section>
@@ -571,6 +479,7 @@
       <div class="foot-bottom">
         <span class="mono">&copy; 2026 Spiro · Barcelona</span>
         <a class="mono" href="/cookie-policy.html" data-i18n="footer.cookies">Cookie Policy</a>
+        <button type="button" class="mono foot-link-btn" data-cookie-settings data-i18n="footer.cookieSettings">Cookie settings</button>
         <span class="mono" data-i18n="footer.tagline">Respira. Reconecta. Repite.</span>
       </div>
     </div>
@@ -618,10 +527,10 @@
     </div>
   </div>
 
-  <script src="/js/i18n.js?v=20260617d"></script>
-  <script src="/js/pricing.js?v=20260617b"></script>
+  <script src="/js/i18n.js?v=20260622"></script>
   <script src="/js/motion.js?v=20260616"></script>
   <script src="/js/main.js?v=20260616"></script>
+  <script src="/js/consent.js?v=20260617c"></script>
   <script>
     (function () {
       var theme = new URLSearchParams(window.location.search).get('theme');
